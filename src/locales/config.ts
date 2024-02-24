@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: { ...enJSON },
     },
-    in: {
+    id: {
       translation: { ...idJSON },
     },
   },

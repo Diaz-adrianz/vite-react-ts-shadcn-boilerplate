@@ -9,9 +9,7 @@ export type State = ReturnType<typeof rootReducer>;
 
 const createStore = () => {
   return configureStore({
-    reducer: {
-      general: generalReducer,
-    },
+    reducer: rootReducer,
   });
 };
 

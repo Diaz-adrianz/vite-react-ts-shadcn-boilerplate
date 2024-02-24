@@ -4,13 +4,13 @@ import { ReactNode, createContext, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 type ContextProps = {
-  get?: State;
-  set: (action: UnknownAction) => void;
+  state?: State;
+  dispatch: (action: UnknownAction) => void;
 };
 
 export const StoreContext = createContext<ContextProps>({
-  get: undefined,
-  set: () => {},
+  state: undefined,
+  dispatch: () => {},
 });
 
 export const useStore = () => {
@@ -18,13 +18,13 @@ export const useStore = () => {
 };
 
 export const StoreProvider = ({ children }: { children: ReactNode }) => {
-  const dispatch = useDispatch();
+  const dispatcher = useDispatch();
 
-  const get = useSelector((state: State) => state);
+  const state = useSelector((state: State) => state);
 
-  const set = (action: UnknownAction) => {
-    dispatch(action);
+  const dispatch = (action: UnknownAction) => {
+    dispatcher(action);
   };
 
-  return <StoreContext.Provider value={{ get, set }}>{children}</StoreContext.Provider>;
+  return <StoreContext.Provider value={{ state, dispatch }}>{children}</StoreContext.Provider>;
 };

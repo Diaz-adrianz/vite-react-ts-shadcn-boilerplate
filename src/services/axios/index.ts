@@ -5,7 +5,7 @@ import {
   ApiRequestContentTypes,
   ApiResponseCallback,
 } from '@/types/general.type';
-// import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/components/ui/use-toast';
 import StorageService from '../storage';
 
 export default class ApiService {
@@ -120,12 +120,12 @@ export default class ApiService {
       if (error instanceof AxiosError) {
         const { response, code } = error;
 
-        // if (code == 'ERR_NETWORK')
-        //   toast({
-        //     title: 'Network Error',
-        //     variant: 'destructive',
-        //     description: "Can't connect to server. Try again later.",
-        //   });
+        if (code == 'ERR_NETWORK')
+          toast({
+            title: 'Network Error',
+            variant: 'destructive',
+            description: "Can't connect to server. Try again later.",
+          });
 
         if (response) this.notifyResponse(response);
 

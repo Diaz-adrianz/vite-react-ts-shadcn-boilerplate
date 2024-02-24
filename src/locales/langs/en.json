@@ -1,3 +1,49 @@
 {
-  "signature": "Dibuat oleh {{ author }}"
+  "signature": "Made by {{ author }}",
+  "created_by": "Created by",
+  "demo": {
+    "tagline": "Elevate Your Development Experience with This Cutting-Edge Boilerplate Project Template",
+    "learning_resources": "Learning Resources",
+    "additional_resources": "Additional Resources",
+    "solutions": [
+      {
+        "title": "Ready to Use",
+        "content": "Offers a plug-and-play solution for web client-side development, ensuring quick project kickoffs."
+      },
+      {
+        "title": "Standardized",
+        "content": "Focused on standardized, organized, and structured. Simplifies the development process, enhancing efficiency and maintainability."
+      },
+      {
+        "title": "Continously Updated",
+        "content": "Continuously striving to stay updated. Designed to accommodate evolving industry trends and open to any feedback."
+      },
+      {
+        "title": "For any Web Purpose",
+        "content": "Can be used for Various Web Client Side Applications: Single Page Applications (SPAs), E-commerce Sites, Dashboards, and More."
+      },
+      {
+        "title": "Coverage Common Needs",
+        "content": "Ensures Comprehensive Coverage of Fundamental and Common Needs in on Web Development Process."
+      }
+    ],
+    "typography_title": "Inspired by Material Guideline",
+    "typography_detail": "This boilerplate offers its own typography styling, designed to be standardized and easily to customize in <0>src/index.css</0>. This guideline is inspired by Material UI 2.",
+    "redux_title": "Centralized the States",
+    "redux_subtitle": "Take a look in <0>src/store && src/providers/store.provider.tsx</0>",
+    "storage_title": "Getting Closer with Local Data",
+    "storage_subtitle": "Basic configuration for handling local and session storage. <br />Take a look in <0>src/services/storage/index.ts</0>.",
+    "storage_local": "Yes, I will remember it even if you comeback tomorrow.",
+    "storage_session": "Please, don't close this browser.",
+    "events_title": "Small Talk Between Components",
+    "events_detail": "Empowering the components to interact with each other based on the topics they listen to. This concept is inspired by Kafka and Quasar Event Bus. <br /> Take a look in <0>src/providers/events.provider.tsx && src/views/pages/example/Example.tsx</0>.",
+    "shadcn_title": "Beautifully Designed Re-Usable Components",
+    "shadcn_points": [
+      "Reasons why to use",
+      "Easy to use",
+      "Reusability",
+      "More Customization Scope",
+      "Suitable Design for Various Web"
+    ]
+  }
 }

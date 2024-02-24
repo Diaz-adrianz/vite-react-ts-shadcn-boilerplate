@@ -1,3 +1,49 @@
 {
-  "signature": "Made by {{ author }}"
+  "signature": "Dibuat oleh {{ author }}",
+  "created_by": "Dibuat oleh",
+  "demo": {
+    "tagline": "Tingkatkan Pengalaman Mengoding Anda dengan Templat Proyek Mutakhir Ini",
+    "learning_resources": "Sumber Belajar",
+    "additional_resources": "Sumber Tambahan",
+    "solutions": [
+      {
+        "title": "Siap Pakai",
+        "content": "Menawarkan solusi plug-and-play untuk pengembangan sisi klien web, memastikan permulaan proyek yang cepat."
+      },
+      {
+        "title": "Terstandarisasi",
+        "content": "Berfokus pada standar, terorganisir, dan terstruktur. Menyederhanakan proses pengembangan, meningkatkan efisiensi dan pemeliharaan."
+      },
+      {
+        "title": "Pembaruan Berkelanjutan",
+        "content": "Terus berusaha untuk tetap update. Dirancang untuk mengakomodasi tren industri yang berkembang dan terbuka terhadap masukan apa pun."
+      },
+      {
+        "title": "Untuk Berbagai Web",
+        "content": "Dapat digunakan untuk Berbagai Aplikasi Web client-side: Aplikasi Halaman Tunggal (SPA), Situs E-niaga, Dasbor, dan Lainnya."
+      },
+      {
+        "title": "Mencakup Kebutuhan Umum",
+        "content": "Memastikan Cakupan Komprehensif dari Kebutuhan Dasar dan Umum dalam Proses Pengembangan Web."
+      }
+    ],
+    "typography_title": "Terinspirasi dari Material",
+    "typography_detail": "Templat ini menawarkan gaya tipografinya sendiri, dirancang agar terstandarisasi dan mudah disesuaikan di <0>src/index.css</0>. Pedoman ini terinspirasi oleh Material UI 2.",
+    "redux_title": "Pemusatan States",
+    "redux_subtitle": "Lihatlah di <0>src/store && src/providers/store.provider.tsx</0>",
+    "storage_title": "Semakin Dekat dengan Data Lokal",
+    "storage_subtitle": "Konfigurasi dasar untuk menangani penyimpanan lokal dan sesi. <br />Lihatlah di <0>src/services/storage/index.ts</0>.",
+    "storage_local": "Ya, aku akan mengingatnya meskipun kamu kembali besok.",
+    "storage_session": "Tolong, jangan tutup peramban ini.",
+    "events_title": "Obrolan Kecil di Antara Komponen",
+    "events_detail": "Memberdayakan komponen untuk saling berinteraksi berdasarkan topik yang didengarkannya. Konsep ini terinspirasi dari Kafka dan Event Bus Quasar. <br /> Lihatlah di <0>src/providers/events.provider.tsx && src/views/pages/example/Example.tsx</0>.",
+    "shadcn_title": "Koleksi Komponen yang Dapat Digunakan Kembali dan Didesain dengan Indah",
+    "shadcn_points": [
+      "Alasan mengapa menggunakan ini",
+      "Mudah digunakan",
+      "Dapat digunakan kembali",
+      "Lebih banyak cakupan kustomisasi",
+      "Desain cocok untuk berbagai jenis Web"
+    ]
+  }
 }
