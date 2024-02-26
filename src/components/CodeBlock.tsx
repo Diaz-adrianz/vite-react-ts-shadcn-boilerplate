@@ -19,4 +19,4 @@ const CodeBlock = React.forwardRef<
   );
 });
 
-export default CodeBlock;
+export { CodeBlock };

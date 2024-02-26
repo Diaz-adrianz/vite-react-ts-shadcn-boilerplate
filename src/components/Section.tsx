@@ -15,4 +15,4 @@ const Section = React.forwardRef<
     </section>
   );
 });
-export default Section;
+export { Section };

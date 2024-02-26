@@ -1,8 +1,8 @@
 import { GithubIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import Config from '@/config';
-import ThemeSelect from './ThemeSelect';
-import LocaleSelect from './LocaleSelect';
+import ThemeSelect from './theme-select';
+import LocaleSelect from './locale-select';
 import { useTranslation } from 'react-i18next';
 
 export default function Header() {

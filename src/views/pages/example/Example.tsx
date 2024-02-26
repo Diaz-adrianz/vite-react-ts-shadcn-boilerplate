@@ -1,5 +1,4 @@
-import Header from '@/components/Header';
-import Section from '@/components/Section';
+import Header from '@/components/header';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -13,7 +12,7 @@ import { Unplug, Layers, FolderSync, Laptop2, Umbrella, Minus, Plus } from 'luci
 import Autoplay from 'embla-carousel-autoplay';
 import { Trans, useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import CodeBlock from '@/components/CodeBlock';
+import { CodeBlock } from '@/components/code-block';
 import { decrement, increment } from '@/store/general.store';
 import { useStore } from '@/providers/store.provider';
 import { Input } from '@/components/ui/input';
@@ -26,6 +25,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import PhotosApi from '@/api/photos.api';
 import { Photo } from '@/types/photo.type';
+import { Section } from '@/components/section';
 
 export default function ExamplePage() {
   return (
