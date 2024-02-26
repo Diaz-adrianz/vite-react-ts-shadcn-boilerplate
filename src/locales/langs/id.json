@@ -44,6 +44,8 @@
       "Dapat digunakan kembali",
       "Lebih banyak cakupan kustomisasi",
       "Desain cocok untuk berbagai jenis Web"
-    ]
+    ],
+    "axios_title": "Pengelolaan Pemanggilan API",
+    "axios_detail": "Pola kode yang disederhanakan untuk menangani tindakan berdasarkan respon dan permintaan dari pengambilan API. Lihatlah di <0>src/services/axios && src/api</0>"
   }
 }

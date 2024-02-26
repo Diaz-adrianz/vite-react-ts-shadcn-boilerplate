@@ -17,12 +17,15 @@ import CodeBlock from '@/components/CodeBlock';
 import { decrement, increment } from '@/store/general.store';
 import { useStore } from '@/providers/store.provider';
 import { Input } from '@/components/ui/input';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import StorageService from '@/services/storage';
 import { useEvents } from '@/providers/events.provider';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
 import { Checkbox } from '@/components/ui/checkbox';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import PhotosApi from '@/api/photos.api';
+import { Photo } from '@/types/photo.type';
 
 export default function ExamplePage() {
   return (
@@ -52,6 +55,9 @@ export default function ExamplePage() {
       </Section>
       <Section>
         <Storage />
+      </Section>
+      <Section>
+        <Axios />
       </Section>
     </>
   );
@@ -112,13 +118,13 @@ function Solutions() {
             delay: 5000,
           }),
         ]}
-        className="px-16"
+        className="px-14"
       >
         <CarouselNext className="right-2" />
         <CarouselPrevious className="left-2" />
         <CarouselContent>
           {appSolutions.map((solution, i) => (
-            <CarouselItem key={i} className="basis-1/2 md:basis-1/3">
+            <CarouselItem key={i} className="sm:basis-1/2 md:basis-1/3">
               <Card>
                 <CardHeader>
                   <div className="flex gap-3 items-center">
@@ -243,7 +249,11 @@ function ShadCn() {
           </li>
         </ul>
       </div>
-      <div className="grow"></div>
+      <div className="grow">
+        <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-md">
+          <img src="./images/shadcn.png" className="w-full h-full object-cover" />
+        </AspectRatio>
+      </div>
     </div>
   );
 }
@@ -253,7 +263,14 @@ function Typography() {
 
   return (
     <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-      <div className="border bg-slate-100 dark:bg-slate-900 rounded-md p-6">
+      <div className="md:order-2">
+        <p className="text-b-1 text-right">✒️ Typography</p>
+        <h1 className="text-h-1 mb-6 text-right">{t('demo.typography_title')}</h1>
+        <p className="text-b-1 max-w-xl ms-auto text-right">
+          <Trans i18nKey={'demo.typography_detail'} t={t} components={[<CodeBlock />]} />
+        </p>
+      </div>
+      <div className="md:order-1 border bg-slate-100 dark:bg-slate-900 rounded-md p-6">
         <h1 className="mb-3 text-h-1">Lorem Ipsum</h1>
         <h2 className="mb-3 text-h-2">Lorem Ipsum</h2>
         <h3 className="mb-3 text-h-3">Lorem Ipsum</h3>
@@ -262,13 +279,6 @@ function Typography() {
         <p className="mb-3 text-b-1">Lorem Ipsum</p>
         <p className="mb-3 text-b-2">Lorem Ipsum</p>
         <span className="mb-3 text-c">Lorem Ipsum</span>
-      </div>
-      <div>
-        <p className="text-b-1 text-right">✒️ Typography</p>
-        <h1 className="text-h-1 mb-6 text-right">{t('demo.typography_title')}</h1>
-        <p className="text-b-1 max-w-xl ms-auto text-right">
-          <Trans i18nKey={'demo.typography_detail'} t={t} components={[<CodeBlock />]} />
-        </p>
       </div>
     </div>
   );
@@ -339,7 +349,7 @@ function Storage() {
 
   return (
     <div>
-      <p className="text-b-1 text-center">Browser Storage 🏪</p>
+      <p className="text-b-1 text-center">Browser Storage 📦</p>
       <h1 className="text-h-1 text-center mb-3">{t('demo.storage_title')}</h1>
 
       <p className="text-b-1 text-center mb-6">
@@ -468,6 +478,47 @@ function HanakoKun() {
         ) : (
           <h3 className="text-4xl">💤</h3>
         )}
+      </div>
+    </div>
+  );
+}
+
+function Axios() {
+  const { t } = useTranslation();
+
+  const [albumId, setAlbumId] = useState('1');
+  const [photos, setPhotos] = useState<Photo[]>([]);
+
+  const getPhotos = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const data = await PhotosApi.getPhotosInAlbum(albumId);
+    setPhotos(data.slice(0, 10));
+  };
+  return (
+    <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+      <div className="grow">
+        <p className="text-b-1">API 🛜</p>
+        <h1 className="text-h-1 mb-6">{t('demo.axios_title')}</h1>
+        <p className="text-b-1 max-w-xl mb-6">
+          <Trans i18nKey={'demo.axios_detail'} t={t} components={[<CodeBlock />]} />
+        </p>
+        <form onSubmit={getPhotos} className="flex gap-3">
+          <div className="grid w-full max-w-sm items-center gap-1.5">
+            <Input type="number" value={albumId} onChange={(e) => setAlbumId(e.target.value)} />
+            <span className="text-c">Type number between 0 and 100</span>
+          </div>
+          <Button type="submit">Get</Button>
+        </form>
+      </div>
+      <div className="grow">
+        <div className="grid gap-3 grid-cols-5">
+          {photos.map((photo, i) => (
+            <AspectRatio key={i} ratio={1 / 1} className="overflow-hidden rounded-md">
+              <img src={photo.url} className="w-full h-full object-cover" />
+            </AspectRatio>
+          ))}
+        </div>
       </div>
     </div>
   );

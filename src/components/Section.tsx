@@ -7,7 +7,7 @@ const Section = React.forwardRef<
 >(({ className, children, ...props }, ref) => {
   return (
     <section
-      className={cn('w-full px-3 py-12 max-w-screen-lg sm:px-6', className)}
+      className={cn('w-full px-6 py-12 max-w-screen-lg sm:px-6', className)}
       ref={ref}
       {...props}
     >

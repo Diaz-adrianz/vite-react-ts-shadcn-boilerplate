@@ -44,6 +44,8 @@
       "Reusability",
       "More Customization Scope",
       "Suitable Design for Various Web"
-    ]
+    ],
+    "axios_title": "API Call Management",
+    "axios_detail": "Simplified code pattern to handle actions on response and on request from fetching API. Take a look in <0>src/services/axios && src/api</0>"
   }
 }

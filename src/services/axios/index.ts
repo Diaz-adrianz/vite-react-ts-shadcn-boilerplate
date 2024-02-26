@@ -1,4 +1,10 @@
-import { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import {
+  AxiosError,
+  AxiosInstance,
+  AxiosProgressEvent,
+  AxiosRequestConfig,
+  AxiosResponse,
+} from 'axios';
 import axiosInstance from './instance';
 import {
   ApiProgressCallback,
@@ -7,6 +13,7 @@ import {
 } from '@/types/general.type';
 import { toast } from '@/components/ui/use-toast';
 import StorageService from '../storage';
+import Utils from '@/utils';
 
 export default class ApiService {
   baseURL: string;
@@ -98,10 +105,16 @@ export default class ApiService {
         };
     }
 
-    if (this.progress && progressCallback != undefined) {
+    if (this.progress || progressCallback != undefined) {
       method == 'GET'
-        ? (config['onDownloadProgress'] = progressCallback)
-        : (config['onUploadProgress'] = progressCallback);
+        ? (config['onDownloadProgress'] = (progressEvent) => {
+            this.setProgress(progressEvent);
+            if (progressCallback) progressCallback(progressEvent);
+          })
+        : (config['onUploadProgress'] = (progressEvent) => {
+            this.setProgress(progressEvent);
+            if (progressCallback) progressCallback(progressEvent);
+          });
     }
 
     if (data) config['data'] = data;
@@ -114,7 +127,7 @@ export default class ApiService {
       return responseCallback({
         status: response.status,
         message: response.data?.message || '',
-        data: response.data?.data || {},
+        data: response.data?.data || response.data || {},
       });
     } catch (error: any) {
       if (error instanceof AxiosError) {
@@ -141,6 +154,16 @@ export default class ApiService {
           data: {},
         });
     }
+  }
+
+  setProgress(progressEvent: AxiosProgressEvent) {
+    const progress = Math.round(
+      (progressEvent.loaded * 100) / (progressEvent.total ?? progressEvent.bytes),
+    );
+    Utils.loading.progress(progress);
+    setTimeout(() => {
+      if (progress == 100) Utils.loading.dismiss();
+    }, 500);
   }
 
   notifyResponse(res: AxiosResponse) {
