@@ -6,7 +6,7 @@ export default function LoadingOverlay() {
 
   return (
     <AlertDialog open={state?.loading.overlay}>
-      <AlertDialogContent className="bg-transparent border-none w-fit">
+      <AlertDialogContent className="w-fit border-none bg-transparent">
         <div aria-label="Loading..." role="status" className="flex items-center space-x-2">
           <svg className="h-20 w-20 animate-spin stroke-primary" viewBox="0 0 256 256">
             <line

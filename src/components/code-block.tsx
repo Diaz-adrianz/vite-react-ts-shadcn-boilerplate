@@ -9,7 +9,7 @@ const CodeBlock = React.forwardRef<
     <code
       ref={ref}
       className={cn(
-        'px-2 bg-slate-100  dark:bg-slate-900 text-primary border rounded-md',
+        'rounded-md border  bg-slate-100 px-2 text-primary dark:bg-slate-900',
         className,
       )}
       {...props}

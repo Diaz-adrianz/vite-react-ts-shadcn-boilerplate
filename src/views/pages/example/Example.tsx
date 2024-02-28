@@ -71,7 +71,7 @@ function Landing() {
   const { t } = useTranslation();
   return (
     <div className="py-24">
-      <h1 className="text-h-1 text-center mb-3 max-w-screen-sm mx-auto">{t('demo.tagline')} ✨</h1>
+      <h1 className="text-h-1 mx-auto mb-3 max-w-screen-sm text-center">{t('demo.tagline')} ✨</h1>
       <p className="text-b-1 text-center">
         {t('created_by')}{' '}
         <a href={Config.general.author.insta} target="_blank">
@@ -131,7 +131,7 @@ function Solutions() {
             <CarouselItem key={i} className="sm:basis-1/2 md:basis-1/3">
               <Card>
                 <CardHeader>
-                  <div className="flex gap-3 items-center">
+                  <div className="flex items-center gap-3">
                     {solution.icon}
                     <h3 className="text-h-3">{solution.title}</h3>
                   </div>
@@ -190,19 +190,19 @@ function Resources() {
 
   return (
     <div>
-      <h3 className="text-h-3 text-center mb-6">{t('demo.learning_resources')}</h3>
-      <div className="flex flex-wrap justify-center items-center gap-3 mb-6 max-w-screen-md mx-auto">
+      <h3 className="text-h-3 mb-6 text-center">{t('demo.learning_resources')}</h3>
+      <div className="mx-auto mb-6 flex max-w-screen-md flex-wrap items-center justify-center gap-3">
         {resources.map((resource, i) => (
           <Button key={i} size="lg" variant={'secondary'} className="gap-3" asChild>
             <a href={resource.link} key={i} target="_blank">
-              <img src={resource.image} alt="" className="w-6 h-6" />
+              <img src={resource.image} alt="" className="h-6 w-6" />
               <p className="text-b-1">{resource.title}</p>
             </a>
           </Button>
         ))}
       </div>
-      <h3 className="text-s-1 text-center mb-3">{t('demo.additional_resources')}</h3>
-      <div className="flex flex-col mx-auto items-center">
+      <h3 className="text-s-1 mb-3 text-center">{t('demo.additional_resources')}</h3>
+      <div className="mx-auto flex flex-col items-center">
         {aditionalResources.map((resource, i) => (
           <Button key={i} variant={'link'} className="gap-3" asChild>
             <a href={resource.link} key={i} target="_blank">
@@ -228,25 +228,25 @@ function ShadCn() {
             <p className="text-b-1">{t('demo.shadcn_points.0')}:</p>
           </li>
           <li className="mb-3">
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-3">
               <Checkbox checked />
               <p className="text-h-3">{t('demo.shadcn_points.1')}</p>
             </div>
           </li>
           <li className="mb-3">
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-3">
               <Checkbox checked />
               <p className="text-h-3">{t('demo.shadcn_points.2')}</p>
             </div>
           </li>
           <li className="mb-3">
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-3">
               <Checkbox checked />
               <p className="text-h-3">{t('demo.shadcn_points.3')}</p>
             </div>
           </li>
           <li className="mb-3">
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-3">
               <Checkbox checked />
               <p className="text-h-3">{t('demo.shadcn_points.4')}</p>
             </div>
@@ -255,7 +255,7 @@ function ShadCn() {
       </div>
       <div className="grow">
         <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-md">
-          <img src="./images/shadcn.png" className="w-full h-full object-cover" />
+          <img src="./images/shadcn.png" className="h-full w-full object-cover" />
         </AspectRatio>
       </div>
     </div>
@@ -270,19 +270,19 @@ function Typography() {
       <div className="md:order-2">
         <p className="text-b-1 text-right">✒️ Typography</p>
         <h1 className="text-h-1 mb-6 text-right">{t('demo.typography_title')}</h1>
-        <p className="text-b-1 max-w-xl ms-auto text-right">
+        <p className="text-b-1 ms-auto max-w-xl text-right">
           <Trans i18nKey={'demo.typography_detail'} t={t} components={[<CodeBlock />]} />
         </p>
       </div>
-      <div className="md:order-1 border bg-slate-100 dark:bg-slate-900 rounded-md p-6">
-        <h1 className="mb-3 text-h-1">Lorem Ipsum</h1>
-        <h2 className="mb-3 text-h-2">Lorem Ipsum</h2>
-        <h3 className="mb-3 text-h-3">Lorem Ipsum</h3>
-        <h4 className="mb-3 text-s-1">Lorem Ipsum</h4>
-        <h5 className="mb-3 text-s-2">Lorem Ipsum</h5>
-        <p className="mb-3 text-b-1">Lorem Ipsum</p>
-        <p className="mb-3 text-b-2">Lorem Ipsum</p>
-        <span className="mb-3 text-c">Lorem Ipsum</span>
+      <div className="rounded-md border bg-slate-100 p-6 dark:bg-slate-900 md:order-1">
+        <h1 className="text-h-1 mb-3">Lorem Ipsum</h1>
+        <h2 className="text-h-2 mb-3">Lorem Ipsum</h2>
+        <h3 className="text-h-3 mb-3">Lorem Ipsum</h3>
+        <h4 className="text-s-1 mb-3">Lorem Ipsum</h4>
+        <h5 className="text-s-2 mb-3">Lorem Ipsum</h5>
+        <p className="text-b-1 mb-3">Lorem Ipsum</p>
+        <p className="text-b-2 mb-3">Lorem Ipsum</p>
+        <span className="text-c mb-3">Lorem Ipsum</span>
       </div>
     </div>
   );
@@ -295,12 +295,12 @@ function Redux() {
   return (
     <div>
       <p className="text-b-1 text-center">Redux store 🏪</p>
-      <h1 className="text-h-1 text-center mb-3">{t('demo.redux_title')}</h1>
-      <p className="text-b-1 text-center mb-6">
+      <h1 className="text-h-1 mb-3 text-center">{t('demo.redux_title')}</h1>
+      <p className="text-b-1 mb-6 text-center">
         <Trans i18nKey={'demo.redux_subtitle'} t={t} components={[<CodeBlock />]} />
       </p>
 
-      <div className="flex gap-3 justify-center items-center">
+      <div className="flex items-center justify-center gap-3">
         <Button onClick={() => store.dispatch(decrement())} variant={'outline'} size={'icon'}>
           <Minus />
         </Button>
@@ -317,7 +317,7 @@ function ReduxShowData() {
   const store = useStore();
 
   return (
-    <div className="px-6 py-3 w-32 text-center border rounded-md bg-slate-100 dark:bg-slate-900">
+    <div className="w-32 rounded-md border bg-slate-100 px-6 py-3 text-center dark:bg-slate-900">
       <h1 className="text-h-1">{store.state?.general.count}</h1>
     </div>
   );
@@ -354,14 +354,14 @@ function Storage() {
   return (
     <div>
       <p className="text-b-1 text-center">Browser Storage 📦</p>
-      <h1 className="text-h-1 text-center mb-3">{t('demo.storage_title')}</h1>
+      <h1 className="text-h-1 mb-3 text-center">{t('demo.storage_title')}</h1>
 
-      <p className="text-b-1 text-center mb-6">
+      <p className="text-b-1 mb-6 text-center">
         <Trans i18nKey={'demo.storage_subtitle'} t={t} components={[<CodeBlock />]} />
       </p>
 
-      <div className="grid grid-cols-1 max-w-xs sm:grid-cols-2 gap-3 sm:max-w-2xl mx-auto">
-        <div className="p-6 flex flex-col gap-3 text-center rounded-md border bg-slate-100 dark:bg-slate-900">
+      <div className="mx-auto grid max-w-xs grid-cols-1 gap-3 sm:max-w-2xl sm:grid-cols-2">
+        <div className="flex flex-col gap-3 rounded-md border bg-slate-100 p-6 text-center dark:bg-slate-900">
           <h1 className="text-6xl">🤖</h1>
           <p className="text-b-1 mb-auto">{t('demo.storage_local')}</p>
           <Input
@@ -370,7 +370,7 @@ function Storage() {
             onChange={(e) => saveLocalValue(e.target.value)}
           />
         </div>
-        <div className="p-6 flex flex-col gap-3 text-center rounded-md border bg-slate-100 dark:bg-slate-900">
+        <div className="flex flex-col gap-3 rounded-md border bg-slate-100 p-6 text-center dark:bg-slate-900">
           <h1 className="text-6xl">😶</h1>
           <p className="text-b-1 mb-auto">{t('demo.storage_session')}</p>
           <Input
@@ -388,7 +388,7 @@ function Events() {
   const { t } = useTranslation();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
       <div>
         <p className="text-b-1">Global events 💬</p>
         <h1 className="text-h-1 mb-6">{t('demo.events_title')}</h1>
@@ -421,8 +421,8 @@ function NeneChan() {
     }, 4000);
   };
   return (
-    <div className="flex items-center gap-6 p-6 rounded-md bg-slate-100 dark:bg-slate-900 border">
-      <Avatar className="w-20 h-20">
+    <div className="flex items-center gap-6 rounded-md border bg-slate-100 p-6 dark:bg-slate-900">
+      <Avatar className="h-20 w-20">
         <AvatarImage src="https://i.pinimg.com/564x/fc/18/de/fc18de05fc6a8b0104ccfbb7b8eb8c5d.jpg" />
         <AvatarFallback>YN</AvatarFallback>
       </Avatar>
@@ -430,7 +430,7 @@ function NeneChan() {
       <div>
         <p className="text-c mb-3">Yashiro nene</p>
         {textShow ? (
-          <div className="p-3 h-fit bg-slate-800 rounded-2xl rounded-bl-none border">
+          <div className="h-fit rounded-2xl rounded-bl-none border bg-slate-800 p-3">
             <h3 className="text-h-3">HANAKO KUN!, I brought you something!</h3>
           </div>
         ) : (
@@ -467,8 +467,8 @@ function HanakoKun() {
   }, []);
 
   return (
-    <div className="flex items-center gap-6 p-6 rounded-md bg-slate-100 dark:bg-slate-900 border">
-      <Avatar className="w-20 h-20">
+    <div className="flex items-center gap-6 rounded-md border bg-slate-100 p-6 dark:bg-slate-900">
+      <Avatar className="h-20 w-20">
         <AvatarImage src="https://i.pinimg.com/736x/87/18/73/871873225f6347b47649d5baf9f0fa94.jpg" />
         <AvatarFallback>YA</AvatarFallback>
       </Avatar>
@@ -476,7 +476,7 @@ function HanakoKun() {
       <div>
         <p className="text-c mb-3">Hanako kun</p>
         {textShow ? (
-          <div className="p-3 h-fit bg-slate-800 rounded-2xl rounded-bl-none border">
+          <div className="h-fit rounded-2xl rounded-bl-none border bg-slate-800 p-3">
             <h3 className="text-h-3">{donut} Arigatou, yashiro.</h3>
           </div>
         ) : (
@@ -504,7 +504,7 @@ function Axios() {
       <div className="grow">
         <p className="text-b-1">API 🛜</p>
         <h1 className="text-h-1 mb-6">{t('demo.axios_title')}</h1>
-        <p className="text-b-1 max-w-xl mb-6">
+        <p className="text-b-1 mb-6 max-w-xl">
           <Trans i18nKey={'demo.axios_detail'} t={t} components={[<CodeBlock />]} />
         </p>
         <form onSubmit={getPhotos} className="flex gap-3">
@@ -517,10 +517,10 @@ function Axios() {
       </div>
       <div className="grow">
         {photos.length ? (
-          <div className="grid gap-3 grid-cols-5">
+          <div className="grid grid-cols-5 gap-3">
             {photos.map((photo, i) => (
               <AspectRatio key={i} ratio={1 / 1} className="overflow-hidden rounded-md">
-                <img src={photo.url} className="w-full h-full object-cover" />
+                <img src={photo.url} className="h-full w-full object-cover" />
               </AspectRatio>
             ))}
           </div>
@@ -538,9 +538,9 @@ function CallToAction() {
   return (
     <div className="pb-36">
       <p className="text-b-1 text-center">Let's connect 🔗</p>
-      <h1 className="text-h-1 text-center mb-3">{t('demo.cta_title')}</h1>
+      <h1 className="text-h-1 mb-3 text-center">{t('demo.cta_title')}</h1>
 
-      <p className="text-b-1 text-center mb-6 max-w-2xl mx-auto">{t('demo.cta_detail')}</p>
+      <p className="text-b-1 mx-auto mb-6 max-w-2xl text-center">{t('demo.cta_detail')}</p>
 
       <div className="flex justify-center">
         <Button size="lg" variant={'secondary'} className="gap-3" asChild>

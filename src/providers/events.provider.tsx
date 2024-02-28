@@ -3,12 +3,12 @@ import { EventSubscriber } from '@/types/general.type';
 import Utils from '@/utils';
 import { ReactNode, createContext, useContext, useState } from 'react';
 
-type ProviderState = {
+interface ProviderState {
   getTopics: typeof Config.events.topics;
   on: (topic: string, func: (metadata: Record<string, any>) => void) => string;
   emit: (topic: string, metadata: Record<string, any>) => void;
   off: (id: string) => void;
-};
+}
 
 export const EventsContext = createContext<ProviderState>({
   getTopics: [],
@@ -17,9 +17,9 @@ export const EventsContext = createContext<ProviderState>({
   off: () => {},
 });
 
-type ProviderProps = {
+interface ProviderProps {
   children: ReactNode;
-};
+}
 
 export const EventsProvider = ({ children }: ProviderProps) => {
   const [subscribers, setSubscribers] = useState<EventSubscriber[]>([]);

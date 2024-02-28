@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 export default function Header() {
   const { t } = useTranslation();
   return (
-    <div className="w-full flex gap-3 p-3 items-center border-b-[1px]">
-      <div className="w-10 h-10  dark:bg-transparent p-1 rounded-md">
+    <div className="flex w-full items-center gap-3 border-b-[1px] p-3">
+      <div className="h-10 w-10  rounded-md p-1 dark:bg-transparent">
         <img src="./images/dzco-logo.png" className="w-full" />
       </div>
       <h3 className="text-h-3">{t('signature', { author: Config.general.author.name })}</h3>

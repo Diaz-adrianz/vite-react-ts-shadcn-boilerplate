@@ -1,16 +1,16 @@
 import { AxiosProgressEvent } from 'axios';
 
-export type EventSubscriber = {
+export interface EventSubscriber {
   id: string;
   topic: string;
   func: (metadata: Record<string, any>) => void;
-};
+}
 
-export type ApiResponse = {
+export interface ApiResponse {
   status: number | null;
   message: string | null;
   data: any | null;
-};
+}
 
 export type ApiResponseCallback = (data: ApiResponse) => void | any;
 

@@ -3,10 +3,10 @@ import { UnknownAction } from '@reduxjs/toolkit';
 import { ReactNode, createContext, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-type ContextProps = {
+interface ContextProps {
   state?: State;
   dispatch: (action: UnknownAction) => void;
-};
+}
 
 export const StoreContext = createContext<ContextProps>({
   state: undefined,

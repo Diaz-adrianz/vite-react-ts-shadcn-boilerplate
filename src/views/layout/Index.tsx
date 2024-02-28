@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function IndexLayout() {
   return (
-    <div className="w-screen overflow-x-hidden max-w-screen-lg mx-auto">
+    <div className="mx-auto w-screen max-w-screen-lg overflow-x-hidden">
       <div>
         <Outlet />
       </div>

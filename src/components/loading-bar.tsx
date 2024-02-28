@@ -5,12 +5,12 @@ export default function LoadingBar() {
   const { state } = useStore();
 
   return (
-    <div className="fixed top-0 w-screen left-0 z-50">
+    <div className="fixed left-0 top-0 z-50 w-screen">
       <Progress
         value={state?.loading.progress}
         color="black"
         className={
-          (state?.loading.progress ? 'bg-secondary' : 'bg-transparent') + ' rounded-none h-1'
+          (state?.loading.progress ? 'bg-secondary' : 'bg-transparent') + ' h-1 rounded-none'
         }
       />
     </div>
