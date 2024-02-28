@@ -8,7 +8,7 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 import Config from '@/config';
-import { Unplug, Layers, FolderSync, Laptop2, Umbrella, Minus, Plus } from 'lucide-react';
+import { Unplug, Layers, FolderSync, Laptop2, Umbrella, Minus, Plus, Github } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Trans, useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -59,6 +59,9 @@ export default function ExamplePage() {
       </Section>
       <Section>
         <Axios />
+      </Section>
+      <Section>
+        <CallToAction />
       </Section>
     </>
   );
@@ -524,6 +527,28 @@ function Axios() {
         ) : (
           <Exception exception="no data" title="No data available" />
         )}
+      </div>
+    </div>
+  );
+}
+
+function CallToAction() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="pb-36">
+      <p className="text-b-1 text-center">Let's connect 🔗</p>
+      <h1 className="text-h-1 text-center mb-3">{t('demo.cta_title')}</h1>
+
+      <p className="text-b-1 text-center mb-6 max-w-2xl mx-auto">{t('demo.cta_detail')}</p>
+
+      <div className="flex justify-center">
+        <Button size="lg" variant={'secondary'} className="gap-3" asChild>
+          <a href={Config.general.app.repo_link} target="_blank">
+            <Github size={18} />
+            <p className="text-b-1">Code repository</p>
+          </a>
+        </Button>
       </div>
     </div>
   );

@@ -33,7 +33,7 @@
     "redux_subtitle": "Lihatlah di <0>src/store && src/providers/store.provider.tsx</0>",
     "storage_title": "Semakin Dekat dengan Data Lokal",
     "storage_subtitle": "Konfigurasi dasar untuk menangani penyimpanan lokal dan sesi. <br />Lihatlah di <0>src/services/storage/index.ts</0>.",
-    "storage_local": "Ya, aku akan mengingatnya meskipun kamu kembali besok.",
+    "storage_local": "Ya, aku akan mengingatnya meskipun anda kembali besok.",
     "storage_session": "Tolong, jangan tutup peramban ini.",
     "events_title": "Obrolan Kecil di Antara Komponen",
     "events_detail": "Memberdayakan komponen untuk saling berinteraksi berdasarkan topik yang didengarkannya. Konsep ini terinspirasi dari Kafka dan Event Bus Quasar. <br /> Lihatlah di <0>src/providers/events.provider.tsx && src/views/pages/example/Example.tsx</0>.",
@@ -46,6 +46,8 @@
       "Desain cocok untuk berbagai jenis Web"
     ],
     "axios_title": "Pengelolaan Pemanggilan API",
-    "axios_detail": "Pola kode yang disederhanakan untuk menangani tindakan berdasarkan respon dan permintaan dari pengambilan API. Lihatlah di <0>src/services/axios && src/api</0>"
+    "axios_detail": "Pola kode yang disederhanakan untuk menangani tindakan berdasarkan respon dan permintaan dari pengambilan API. Lihatlah di <0>src/services/axios && src/api</0>",
+    "cta_title": "Apakah Menurutmu Anda Ini Berguna?",
+    "cta_detail": "Saat ini templat ini bersifat open-source. Artinya, Anda dapat berkontribusi dengan membuka permintaan fitur, penyempurnaan, atau apa pun yang menjadikan template ini lebih baik dari sebelumnya."
   }
 }
