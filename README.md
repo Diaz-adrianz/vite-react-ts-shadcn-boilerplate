@@ -90,7 +90,3 @@ If you have any feedback, please reach out me at [email](mailto:diazz.developer@
 ## License
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
-<!-- ![Logo](./public/images/dzco-logo.png) -->
-
-<!-- Have you ever feel the code is getting more fall apart due to scaling up the web? You found there are too many repetition code? wrong variabel configuration? reduce it now! starts to preparing your project standard for better future development process!. -->
