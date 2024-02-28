@@ -1,30 +1,96 @@
-# React + TypeScript + Vite
+## Vite React TS Shadcn Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi there! this is ready to use!
+Elevate your development experience with this cutting-edge boilerplate project. Do you find yourself grappling with code complexity as your web project scales up? Are repetitive code and variable misconfigurations bogging you down? It's time to streamline your workflow setup for future-proof development process!
 
-Currently, two official plugins are available:
+Focused on standardized, organized, and structured. Simplifies the development process, enhancing efficiency and maintainability. Ensures Comprehensive Coverage of Fundamental and Common Needs in on Web Development Process. Continuously striving to stay updated. Designed to accommodate evolving industry trends and open to any feedback.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you're a fan of `Vite`, `React`, `TypeScript`, and `Shadcn UI` (among others) for building React web SPAs, then give it a try.
 
-## Expanding the ESLint configuration
+## Run Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clone the project
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+  git clone < repository link >
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd vite-react-ts-shadcn-boilerplate
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Prepare dependencies, optional. Currently just to prepare husky.
+
+```bash
+  npm run prepare
+```
+
+Start the server at port 3000
+
+```bash
+  npm run start
+```
+
+## Tech Stack
+
+- [vite](https://vitejs.dev/)
+- [react](https://reactjs.org/)
+- [shadcn ui](https://ui.shadcn.com/)
+- [tailwindcss](https://tailwindcss.com/)
+- [react-router-dom](https://reactrouter.com/en/6.16.0)
+- [react-redux](https://react-redux.js.org/)
+- [axios](https://axios-http.com/docs/intro)
+- [react-i18next](https://github.com/i18next/react-i18next)
+- [react-lucide](https://lucide.dev/)
+- [postcss](https://postcss.org/)
+- [eslint](https://eslint.org/)
+- [prettier](https://prettier.io/)
+- [husky](https://typicode.github.io/husky/#/)/[lint-staged](https://github.com/okonet/lint-staged)
+- [commitlint](https://commitlint.js.org/)
+
+## Project Structure
+
+```sh
+src
+├── assets       # Assets for images, fonts, icon etc
+├── components   # React components
+├── config       # App configuration / constant values
+├── locales      # i18n files
+├── providers    # React providers / contexts
+├── router       # App dom routing
+├── services     # Services for axios, thirdparty, etc
+├── store        # Redux state management
+├── types        # Typescript data type definition
+├── utils        # Utility / helper functions
+├── views        # App User Interfaces
+  ├── fragments
+  ├── layout
+  ├── pages
+├── app.tsx      # App entry, global providers
+├── main.tsx     # File entry
+└── vite-env.d.ts
+```
+
+## Authors
+
+- [@Diaz-Adrianz](https://github.com/Diaz-adrianz)
+
+## Feedback
+
+If you have any feedback, please reach out me at [email](mailto:diazz.developer@gmail.com)
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+<!-- ![Logo](./public/images/dzco-logo.png) -->
+
+<!-- Have you ever feel the code is getting more fall apart due to scaling up the web? You found there are too many repetition code? wrong variabel configuration? reduce it now! starts to preparing your project standard for better future development process!. -->
