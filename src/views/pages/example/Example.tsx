@@ -26,6 +26,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import PhotosApi from '@/api/photos.api';
 import { Photo } from '@/types/photo.type';
 import { Section } from '@/components/section';
+import Exception from '@/components/exception';
 
 export default function ExamplePage() {
   return (
@@ -512,13 +513,17 @@ function Axios() {
         </form>
       </div>
       <div className="grow">
-        <div className="grid gap-3 grid-cols-5">
-          {photos.map((photo, i) => (
-            <AspectRatio key={i} ratio={1 / 1} className="overflow-hidden rounded-md">
-              <img src={photo.url} className="w-full h-full object-cover" />
-            </AspectRatio>
-          ))}
-        </div>
+        {photos.length ? (
+          <div className="grid gap-3 grid-cols-5">
+            {photos.map((photo, i) => (
+              <AspectRatio key={i} ratio={1 / 1} className="overflow-hidden rounded-md">
+                <img src={photo.url} className="w-full h-full object-cover" />
+              </AspectRatio>
+            ))}
+          </div>
+        ) : (
+          <Exception exception="no data" title="No data available" />
+        )}
       </div>
     </div>
   );
