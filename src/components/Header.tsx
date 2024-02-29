@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <div className="flex w-full items-center gap-3 border-b-[1px] p-3">
       <div className="h-10 w-10  rounded-md p-1 dark:bg-transparent">
-        <img src="./images/dzco-logo.png" className="w-full" />
+        <img src="./images/dazveloper-logo.png" className="w-full" />
       </div>
       <h3 className="text-h-3">{t('signature', { author: Config.general.author.name })}</h3>
       <div className="grow"></div>

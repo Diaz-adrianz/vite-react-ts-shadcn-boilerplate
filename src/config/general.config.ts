@@ -8,7 +8,7 @@ const generalConfig = {
       year_updated: '2024',
     },
     author: {
-      name: 'DZCO',
+      name: 'Dazveloper',
       real_name: 'Diaz',
       github: 'https://github.com/Diaz-adrianz',
       insta: 'https://www.instagram.com/zaid.jsx',
